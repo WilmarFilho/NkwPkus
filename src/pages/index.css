@@ -1,0 +1,51 @@
+:root {
+    --padding-global: 128px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body {
+    background-image: url('./bg.webp');
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+@media (max-width: 409px) {
+    :root {
+        --padding-global: 15px;
+    }
+}
+
+@media (max-width: 809px) and (min-width: 410px) {
+    :root {
+        --padding-global: 30px;
+    }
+}
+
+@media (max-width: 999px) and (min-width: 810px) {
+    :root {
+        --padding-global: 40px;
+    }
+}
+
+@media (max-width: 1499px) and (min-width: 1000px) {
+    :root {
+        --padding-global: 60px;
+    }
+}
+
+@media (max-width: 1899px) and (min-width: 1500px) {
+    :root {
+        --padding-global: 128px;
+    }
+}
+

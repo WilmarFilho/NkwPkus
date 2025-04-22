@@ -1,0 +1,152 @@
+header {
+    background-color: #030307d2;
+    padding: 32px var(--padding-global);
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.wrapperLogo {
+    padding: 0 !important;
+}
+
+.btnContato {
+    background-color: #ffffff13;
+    border-radius: 12px;
+    padding: 8px 20px;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: .5s;
+}
+
+a:hover {
+    color: #d80137;
+}
+
+.navHeader {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    padding: 0 !important;
+}
+
+ul {
+    gap: 32px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+.main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 var(--padding-global) 6em var(--padding-global);
+    gap: 32px;
+}
+
+.titles {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+form {
+    width: 100%;
+    height: 160px;
+    background-color: #20202073;
+    border: 1px solid #ffffff33;
+    border-radius: 25px;
+    padding: 0 40px;
+}
+
+.titles h1, .titles h2{
+    color: white; 
+    font-family: 'K2D';
+    font-size: 50px;
+}
+
+input, button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+input {
+    font-family: 'Jost';
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.inputCustom {
+    padding: 0 !important;
+}
+
+.wrapperButton button {
+    width: 80px !important;
+    height: 80px;
+    border: 5px solid rgba(0, 0, 0, 0.507);
+    border-radius: 500px;
+    background-color: #ffffffd5;
+    align-self: center;
+}
+
+.wrapperButton {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.iconSubmit {
+    width: 31px;
+    height: 39px;
+}
+
+
+@media (max-width: 409px) {
+    header {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 809px) and (min-width: 410px) {
+    header {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 999px) and (min-width: 810px) {
+    header {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1499px) and (min-width: 1000px) {
+    header {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1899px) and (min-width: 1500px) {
+    header {
+        font-size: 16px;
+    }
+}
+
