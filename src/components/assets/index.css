@@ -291,7 +291,7 @@ input {
 
     .main {
         padding: 90px var(--padding-global);
-        justify-content: start;
+        justify-content: center;
     }
 
     .parado,
@@ -365,7 +365,7 @@ input {
 
     .main {
         padding: 100px var(--padding-global) 140px var(--padding-global);
-        justify-content: start;
+        justify-content: center;
     }
 
     .parado,
