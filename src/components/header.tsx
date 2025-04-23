@@ -7,14 +7,14 @@ export default function Header() {
 
   return (
     <header className={`row header ${menuAberto ? 'ativo' : ''}`}>
-      <div className="col-8  col-md-3 col-lg-3 wrapperLogo">
+      <div className="col-7  col-md-3 col-lg-3 wrapperLogo">
         <a href="https://nkw.framer.website">
           <img src={logo} alt="Logo" />
         </a>
       </div>
 
       {/* Botão Hamburguer */}
-      <div className={`col-4 col-md-9 col-lg-9 menu-toggle ${menuAberto ? 'ativo' : ''}`} onClick={() => setMenuAberto(!menuAberto)}>
+      <div className={`col-5 col-md-9 col-lg-9 menu-toggle ${menuAberto ? 'ativo' : ''}`} onClick={() => setMenuAberto(!menuAberto)}>
         <span></span>
         <span></span>
         <span></span>

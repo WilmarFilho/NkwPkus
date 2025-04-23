@@ -4,10 +4,8 @@ import iconChat from './assets/iconChat.svg'
 
 export default function Main() {
     //const temMensagem = false;
-    //const height = undefined;
 
     const temMensagem = true;
-    const height = '120px';
 
     const mensagensFake = [
         { id: 1, texto: "Olá! Como posso te ajudar?", tipo: "bot" },
@@ -34,13 +32,13 @@ export default function Main() {
                 <div className='chat'>
                     {mensagensFake.map(msg => (
                         <div key={msg.id} className={`mensagem ${msg.tipo}`}>
-                            {msg.tipo === 'bot' ? <div className='iconChat'><img src={iconChat} /></div> : null } {msg.texto}
+                             {msg.texto}
                         </div>
                     ))}
                 </div>
             )}
 
-            <CustomForm formHeight={height} />
+            <CustomForm temMensagem={temMensagem} />
 
         </section>
     );

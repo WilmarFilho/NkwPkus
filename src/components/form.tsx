@@ -3,10 +3,10 @@ import { useState } from 'react';
 import icon from './assets/icon.svg';
 
 interface CustomFormProps {
-  formHeight?: string; 
+  temMensagem?: boolean; 
 }
 
-export default function CustomForm( {formHeight = '160px'} : CustomFormProps) {
+export default function CustomForm( {temMensagem = false} : CustomFormProps) {
   const [valor, setValor] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -15,7 +15,7 @@ export default function CustomForm( {formHeight = '160px'} : CustomFormProps) {
   };
 
   return (
-    <form style={{ height: formHeight }} className='row' onSubmit={handleSubmit}>
+    <form  className={`row ${temMensagem ? 'rodando' : 'parado'}`} onSubmit={handleSubmit}>
       <input
         className='inputCustom col-9'
         

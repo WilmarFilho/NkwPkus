@@ -6,6 +6,7 @@ header {
     font-size: 18px;
     color: #ffffff;
     margin: 0 !important;
+
 }
 
 .wrapperLogo {
@@ -75,6 +76,7 @@ form {
     border-radius: 25px;
     padding: 0 40px;
     backdrop-filter: blur(10px);
+
 }
 
 .titles h1,
@@ -142,18 +144,15 @@ input {
 
 /* Estilizando a barra de rolagem (opcional) */
 .chat::-webkit-scrollbar {
-    width: 8px;
+    width: 2px;
+    border-radius: 80px;
 }
 
-.chat::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
-}
 
 .mensagem {
     background-color: #252525e0;
     width: fit-content;
-    padding: 10px 32px;
+    max-width: 50%;
     border-radius: 200px;
     color: white;
     font-family: 'Jost';
@@ -165,12 +164,15 @@ input {
 }
 
 .mensagem.bot {
+    background-color: transparent;
     align-self: flex-start;
-    padding: 0 32px 0 0;
+    max-width: 90%;
+    padding: 10px 32px 10px 12px;
 }
 
 .mensagem.user {
     align-self: flex-end;
+    padding: 10px 32px;
 }
 
 .iconChat {
@@ -216,12 +218,32 @@ input {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+.parado {
+    height: 160px;
+}
 
+.rodando {
+    height: 120px;
+}
 
 
 @media (max-width: 409px) {
     header {
         font-size: 13px;
+        position: absolute;
+        top: 0;
+    }
+
+    .chat {
+        padding: 20px 15px;
+        flex: 0;
+        flex-basis: calc(100vh - 250px);
+        max-height: none;
+    }
+
+    .mensagem {
+        font-size: 15px;
+        max-width: 70%;
     }
 
     .menu-toggle {
@@ -266,11 +288,94 @@ input {
     .wrapperLogo {
         z-index: 20;
     }
+
+    .main {
+        padding: 90px var(--padding-global);
+        justify-content: start;
+    }
+
+    .parado,
+    .rodando {
+        height: 80px;
+    }
+
+    .titles h1,
+    .titles h2 {
+        font-size: 30px;
+    }
+
+    form {
+        position: absolute;
+        width: 80%;
+        bottom: 26px;
+        padding: 0 16px;
+    }
+
+    .wrapperButton button {
+        width: 50px !important;
+        height: 50px;
+    }
+    .iconSubmit {
+        width: 21px;
+        height: 21px;
+    }
+    .inputCustom {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 809.9px) and (min-width: 410px) {
     header {
         font-size: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    form {
+        position: absolute;
+        width: 85%;
+        bottom: 26px;
+        padding: 0 16px;
+    }
+
+    .wrapperButton button {
+        width: 50px !important;
+        height: 50px;
+    }
+    .iconSubmit {
+        width: 21px;
+        height: 21px;
+    }
+    .inputCustom {
+        font-size: 14px;
+    }
+
+    .chat {
+        padding: 20px 15px;
+        flex: 0;
+        flex-basis: calc(100vh - 250px);
+        max-height: none;
+    }
+
+    .mensagem {
+        font-size: 15px;
+        max-width: 70%;
+    }
+
+    .main {
+        padding: 100px var(--padding-global) 140px var(--padding-global);
+        justify-content: start;
+    }
+
+    .parado,
+    .rodando {
+        height: 80px;
+    }
+
+    .titles h1,
+    .titles h2 {
+        font-size: 30px;
     }
 
     .menu-toggle {
@@ -325,12 +430,21 @@ input {
     .btnContato {
         display: none;
     }
+
+    .chat {
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 1499px) and (min-width: 1000px) {
     header {
         font-size: 16px;
     }
+
+    .chat {
+        padding: 30px 20px;
+    }
+
 }
 
 @media (max-width: 1899px) and (min-width: 1500px) {
