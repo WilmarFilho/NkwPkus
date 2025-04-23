@@ -2,7 +2,11 @@ import { useState } from 'react';
 
 import icon from './assets/icon.svg';
 
-export default function CustomForm() {
+interface CustomFormProps {
+  formHeight?: string; 
+}
+
+export default function CustomForm( {formHeight = '160px'} : CustomFormProps) {
   const [valor, setValor] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -11,9 +15,10 @@ export default function CustomForm() {
   };
 
   return (
-    <form className='row' onSubmit={handleSubmit}>
+    <form style={{ height: formHeight }} className='row' onSubmit={handleSubmit}>
       <input
         className='inputCustom col-9'
+        
         name="pergunta"
         type="text"
         placeholder="Pergunte qualquer coisa"

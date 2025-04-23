@@ -10,13 +10,10 @@
 #root {
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 body {
     background-image: url('./bg.webp');
-    height: 100vh;
-    overflow-y: hidden;
 }
 
 @media (max-width: 409px) {

@@ -1,6 +1,6 @@
 header {
     background-color: #030307d2;
-    padding: 32px var(--padding-global);
+    padding: 24px var(--padding-global);
     font-family: 'Jost';
     font-weight: 400;
     font-size: 18px;
@@ -53,7 +53,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 var(--padding-global) 6em var(--padding-global);
+    padding: 2em var(--padding-global) 2em var(--padding-global);
     gap: 32px;
 }
 
@@ -67,20 +67,22 @@ ul {
 
 form {
     width: 100%;
-    height: 160px;
     background-color: #20202073;
     border: 1px solid #ffffff33;
     border-radius: 25px;
     padding: 0 40px;
+    backdrop-filter: blur(10px);
 }
 
-.titles h1, .titles h2{
-    color: white; 
+.titles h1,
+.titles h2 {
+    color: white;
     font-family: 'K2D';
     font-size: 50px;
 }
 
-input, button {
+input,
+button {
     background-color: transparent;
     border: none;
     outline: none;
@@ -119,6 +121,69 @@ input {
     height: 39px;
 }
 
+.chat {
+    flex: 1;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
+    gap: 32px;
+    background-color: #20202073;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff1c;
+    scroll-behavior: smooth;
+    padding: 50px 40px;
+}
+
+/* Estilizando a barra de rolagem (opcional) */
+.chat::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.mensagem {
+    background-color: #252525e0;
+    width: fit-content;
+    padding: 10px 32px;
+    border-radius: 200px;
+    color: white;
+    font-family: 'Jost';
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.mensagem.bot {
+    align-self: flex-start;
+    padding: 0 32px 0 0;
+}
+
+.mensagem.user {
+    align-self: flex-end;
+}
+
+.iconChat {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconChat img {
+    width: 18.3px;
+    height: 20px;
+}
 
 @media (max-width: 409px) {
     header {
@@ -149,4 +214,3 @@ input {
         font-size: 16px;
     }
 }
-
