@@ -19,7 +19,7 @@ body {
     height: 100vh;
 }
 
-@media (max-width: 409px) {
+@media (max-width: 409.9px) {
     :root {
         --padding-global: 24px;
     }

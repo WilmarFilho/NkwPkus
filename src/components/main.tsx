@@ -59,7 +59,7 @@ export default function Main() {
                 {
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: ""},
+                        Authorization: "SUA API AQUI"},
                 }
             );
 

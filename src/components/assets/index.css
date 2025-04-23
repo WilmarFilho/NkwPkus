@@ -239,7 +239,7 @@ input {
 }
 
 
-@media (max-width: 409px) {
+@media (max-width: 409.9px) {
     header {
         font-size: 13px;
         position: absolute;
@@ -317,7 +317,7 @@ input {
     
     .semMensagem {
         justify-content: center;
-        padding-bottom: 8em;
+        padding-bottom: 12em;
     }
 
     .parado,
@@ -332,7 +332,7 @@ input {
 
     form {
         position: absolute;
-        width: 80%;
+        width: 90%;
         bottom: 26px;
         padding: 0 16px;
     }
@@ -360,7 +360,7 @@ input {
 
     form {
         position: absolute;
-        width: 85%;
+        width: 90%;
         bottom: 26px;
         padding: 0 16px;
     }
@@ -404,7 +404,7 @@ input {
     
     .semMensagem {
         justify-content: center;
-        padding-bottom: 5em;
+        padding-bottom: 8em;
     }
 
     .parado,
