@@ -5,6 +5,7 @@ header {
     font-weight: 400;
     font-size: 18px;
     color: #ffffff;
+    margin: 0 !important;
 }
 
 .wrapperLogo {
@@ -15,6 +16,8 @@ header {
     background-color: #ffffff13;
     border-radius: 12px;
     padding: 8px 20px;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.137);
 }
 
 img {
@@ -185,21 +188,142 @@ input {
     height: 20px;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.menu-toggle.ativo span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.ativo span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.ativo span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+
+
 @media (max-width: 409px) {
     header {
         font-size: 13px;
     }
+
+    .menu-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+
+    }
+
+    .navHeader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.85);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        transform: translateY(-100%);
+        opacity: 0;
+        backdrop-filter: blur(0px);
+        filter: blur(10px);
+        transition: transform 0.3s ease, opacity 0.3s ease, backdrop-filter 0.3s ease;
+        z-index: 10;
+    }
+
+    .navHeader.ativo {
+        transform: translateY(0);
+        opacity: 1;
+        filter: none;
+        backdrop-filter: blur(10px);
+    }
+
+    .navHeader ul {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: start;
+        padding: 0 var(--padding-global) !important;
+    }
+
+    .wrapperLogo {
+        z-index: 20;
+    }
 }
 
-@media (max-width: 809px) and (min-width: 410px) {
+@media (max-width: 809.9px) and (min-width: 410px) {
     header {
         font-size: 15px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+
+    }
+
+    .navHeader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.85);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        transform: translateY(-100%);
+        opacity: 0;
+        backdrop-filter: blur(0px);
+        filter: blur(10px);
+        transition: transform 0.3s ease, opacity 0.3s ease, backdrop-filter 0.3s ease;
+        z-index: 10;
+    }
+
+    .navHeader.ativo {
+        transform: translateY(0);
+        opacity: 1;
+        filter: none;
+        backdrop-filter: blur(10px);
+    }
+
+    .navHeader ul {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: start;
+        padding: 0 var(--padding-global) !important;
+    }
+
+    .wrapperLogo {
+        z-index: 20;
     }
 }
 
 @media (max-width: 999px) and (min-width: 810px) {
     header {
         font-size: 16px;
+    }
+
+    .btnContato {
+        display: none;
     }
 }
 

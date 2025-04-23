@@ -18,13 +18,13 @@ body {
 
 @media (max-width: 409px) {
     :root {
-        --padding-global: 15px;
+        --padding-global: 40px;
     }
 }
 
-@media (max-width: 809px) and (min-width: 410px) {
+@media (max-width: 809.9px) and (min-width: 410px) {
     :root {
-        --padding-global: 30px;
+        --padding-global: 40px;
     }
 }
 
