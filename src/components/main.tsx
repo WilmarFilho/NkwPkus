@@ -103,7 +103,7 @@ export default function Main() {
 
 
     return (
-        <section className="main">
+        <section className={`main ${temMensagem ? 'comMensagem' : 'semMensagem'}`}>
 
             {!temMensagem ? (
                 <article className="titles">

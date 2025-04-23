@@ -21,7 +21,7 @@ body {
 
 @media (max-width: 409px) {
     :root {
-        --padding-global: 40px;
+        --padding-global: 24px;
     }
     body {
         overflow-y: hidden;
@@ -31,7 +31,7 @@ body {
 
 @media (max-width: 809.9px) and (min-width: 410px) {
     :root {
-        --padding-global: 40px;
+        --padding-global: 30px;
     }
     body {
         overflow-y: hidden;
