@@ -20,6 +20,7 @@ export default function CustomForm({ temMensagem = false, onEnviar }: CustomForm
   return (
     <form className={`row ${temMensagem ? 'rodando' : 'parado'}`} onSubmit={handleSubmit}>
       <input
+        autoComplete="off"
         className="inputCustom col-9"
         name="pergunta"
         type="text"

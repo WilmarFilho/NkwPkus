@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CustomForm from './form';
 import './assets/index.css';
@@ -16,8 +16,6 @@ export default function Main() {
     const [mensagens, setMensagens] = useState<Mensagem[]>([]);
 
     const [loading, setLoading] = useState(false);
-
-    const chatContainerRef = useRef<HTMLDivElement | null>(null);
 
     const scrollParaFim = () => {
         const chatDiv = document.querySelector('.chat');
@@ -42,29 +40,16 @@ export default function Main() {
 
         try {
             const response = await axios.post(
-                "https://api.openai.com/v1/chat/completions",
+                "https://api.nkwclub.com/api/chat", 
                 {
-                    model: "gpt-3.5-turbo",
-                    messages: [
-                        {
-                            role: "system",
-                            content: "Você é NKW PLUS, o assistente virtual da NKW. Sua missão é ajudar pessoas, mesmo aquelas que não têm muita familiaridade com tecnologia. Seja claro, simples e direto, como um amigo inteligente e criativo. Sempre explique de forma didática, usando exemplos se necessário. Caso não saiba o nome do usuário, pergunte uma vez e use o nome dele nas próximas mensagens. Mantenha um tom jovem, acolhedor e descontraído, como se estivesse conversando com alguém próximo, mas sem perder o profissionalismo."
-                        },
-                        ...mensagensAtualizadas.map((msg) => ({
-                            role: msg.tipo === "user" ? "user" : "assistant",
-                            content: msg.texto,
-                        })),
-                    ],
-                },
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: "SUA API AQUI"},
+                    mensagens: mensagensAtualizadas.map((msg) => ({
+                        tipo: msg.tipo,
+                        texto: msg.texto,
+                    }))
                 }
             );
 
-            const respostaBot = response.data.choices[0].message.content;
-
+            const respostaBot = response.data.resposta;
             const textoFormatado = formatarTexto(respostaBot);
 
             setMensagens((prev) => [
@@ -72,7 +57,7 @@ export default function Main() {
                 { id: Date.now() + 1, texto: textoFormatado, tipo: "bot" },
             ]);
         } catch (error) {
-            console.error("Erro ao chamar a OpenAI:", error);
+            console.error("Erro ao chamar a API do Laravel:", error);
             setMensagens((prev) => [
                 ...prev,
                 { id: Date.now() + 1, texto: "Erro ao se conectar. Tente novamente mais tarde.", tipo: "bot" },
@@ -81,6 +66,7 @@ export default function Main() {
             setLoading(false);
         }
     };
+
 
     // Função para formatar o texto da resposta, se necessário
     const formatarTexto = (texto: string) => {
@@ -113,7 +99,7 @@ export default function Main() {
             ) : (
                 <div className="chat">
                     {mensagens.map((msg) => (
-                        <div key={msg.id} className={`mensagem ${msg.tipo}`}>
+                        <div key={msg.id} className={` mensagem ${msg.tipo}`}>
                             <div dangerouslySetInnerHTML={{ __html: msg.texto }} />
                         </div>
                     ))}
