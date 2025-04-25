@@ -29,8 +29,8 @@ export default function CustomForm({ temMensagem = false, onEnviar }: CustomForm
         onChange={(e) => setValor(e.target.value)}
       />
       <div className="col-3 wrapperButton">
-        <button type="submit" >
-          <img className="iconSubmit" src={icon} />
+        <button aria-label='btn' type="submit" >
+          <img className="iconSubmit" src={icon} alt='icone de seta' />
         </button>
       </div>
     </form>

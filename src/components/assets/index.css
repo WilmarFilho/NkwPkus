@@ -21,6 +21,11 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.137);
 }
 
+.btnContato:hover {
+    background-color: #ffffff50;
+    color: white !important;
+}
+
 img {
     width: 100%;
 }
@@ -119,10 +124,16 @@ input {
     border-radius: 500px;
     background-color: #ffffffd5;
     align-self: center;
+    transition: .5s;
 }
 
 .wrapperButton button:focus {
     outline: 3px solid white;
+}
+
+
+.wrapperButton button:hover {
+    border: 5px solid #d80137;
 }
 
 .wrapperButton {
